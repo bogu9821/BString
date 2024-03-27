@@ -84,8 +84,8 @@ eStringError BStringConcentrateN(BString* t_desc, const BStringView* t_stringArr
 
 /*
 	This function compares two BStrings lexicographically.
-	t_left The first BString to be compared.
-	t_right The second BString to be compared.
+	t_left: The first BString to be compared.
+	t_right: The second BString to be compared.
 */
 int BStringCompare(const BString t_left, const BString t_right);
 
@@ -166,8 +166,8 @@ eStringError BStringInsertAt(BString* t_string, const BStringView t_insert, cons
 /*
 	Erases a char from a BString at the specified index.
 
-	- t_string: Pointer to the BString to modify.
-	- t_index: Index of the substring to remove.
+	t_string: Pointer to the BString to modify.
+	t_index: Index of the substring to remove.
 
 */
 eStringError BStringEraseAt(BString* t_string, const size_t t_index);
