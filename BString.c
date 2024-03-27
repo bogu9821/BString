@@ -286,3 +286,13 @@ eStringError BStringConcentrateN(BString* t_desc, const BStringView* t_stringArr
 
 	return BSTRING_NONE;
 }
+
+int BStringCompare(const BString t_left, const BString t_right)
+{
+	return strcmp(t_left.m_str, t_right.m_str);
+}
+
+bool BStringEquals(const BString t_left, const BString t_right)
+{
+	return BStringCompare(t_left, t_right) == 0;
+}

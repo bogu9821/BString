@@ -81,6 +81,21 @@ eStringError BStringJoin(BString* t_desc, const BString t_src);
 */
 eStringError BStringConcentrateN(BString* t_desc, const BStringView* t_stringArray, const size_t t_stringsNum);
 
+
+/*
+	This function compares two BStrings lexicographically.
+	t_left The first BString to be compared.
+	t_right The second BString to be compared.
+*/
+int BStringCompare(const BString t_left, const BString t_right);
+
+/*
+	This function compares two BStrings lexicographically.
+	t_left The first BString to be compared.
+	t_right The second BString to be compared.
+*/
+bool BStringEquals(const BString t_left, const BString t_right);
+
 /*
 	Swap the content of two BStrings
 	t_desc: pointer to the first BString
@@ -207,3 +222,4 @@ EXTERN_C_END
 
 #undef EXTERN_C_BEGIN
 #undef EXTERN_C_END
+
