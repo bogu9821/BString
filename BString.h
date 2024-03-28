@@ -67,11 +67,11 @@ eStringError BStringJoin(BString* t_desc, const BString t_src);
 	dest: pointer to the destination BString.
 	...: variable number of BStringViews to concatenate.
 */
-#define BStringConcentrate(dest, ...)														 \
-{	                                 														 \
-	const BStringView stringArray[] = { __VA_ARGS__ };										\
-	BStringConcentrateN(dest, stringArray, sizeof(stringArray)/sizeof(*stringArray));		\
-}																							\
+#define BStringConcentrate(dest, ...)\
+{\
+	const BStringView stringArray[] = { __VA_ARGS__ };\
+	BStringConcentrateN(dest, stringArray, sizeof(stringArray)/sizeof(*stringArray));\
+}\
 
 /*
 	Concentrate the content of x BStrings to to the destination
@@ -182,7 +182,7 @@ static inline BStringView BStringToViewStr(const BString t_string)
 }
 
 #define BStringToView(string)					\
-	_Generic(string,							\
+	_Generic((string),							\
 		BString:		BStringToViewStr,		\
 		char*:			BStringViewCreate,		\
 		const char*:	BStringViewCreate		\
