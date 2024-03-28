@@ -207,8 +207,6 @@ eStringError BStringEraseAt(BString* t_string, const size_t t_index)
 	memcpy(newBuffer, t_string->m_str, t_index);
 	memcpy(newBuffer + t_index, t_string->m_str + t_index + 1, t_string->m_size - 1);
 
-	free(t_string->m_str);
-
 	t_string->m_str = newBuffer;
 	t_string->m_size = newSize;
 
