@@ -155,16 +155,9 @@ size_t BStringFind(const BString t_string, const char* t_toFind, size_t t_offset
 }
 
 
-eStringError BStringSubstring(BString* t_source, const BString t_string, const char* t_toFind, size_t t_offset)
+eStringError BStringSubstring(BString* t_source, const BString t_string, size_t t_offset, size_t t_num)
 {
-	const size_t pos = BStringFind(t_string, t_toFind, t_offset);
-
-	if (pos == BSTRING_NPOS)
-	{
-		return BSTRING_NOTFOUND;
-	}
-
-	return BStringCreateN(t_source, t_string.m_str + t_offset + pos, t_string.m_size - t_offset - pos);
+	return BStringCreateN(t_source, t_string.m_str + t_offset, t_num == BSTRING_NPOS ? t_string.m_size - t_offset : t_num);
 }
 
 eStringError BStringInsertAt(BString* t_string, const BStringView t_insert, const size_t t_index)

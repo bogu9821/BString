@@ -130,6 +130,8 @@ void BStringPrint(const BString t_string);
 */
 size_t BStringFind(const BString t_string, const char* t_toFind, size_t t_offset);
 
+eStringError BStringSubstring(BString* t_source, const BString t_string, size_t t_offset, size_t t_num);
+
 /*
 	Replace a substring in a BString with another substring
 	t_string: pointer to the BString to perform replacement on
