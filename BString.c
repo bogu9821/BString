@@ -137,7 +137,7 @@ void BStringFree(BString* t_string)
 	t_string->m_size = 0;
 }
 
-inline void BStringPrint(const BString t_string)
+void BStringPrint(const BString t_string)
 {
 	if (!t_string.m_size)
 	{
